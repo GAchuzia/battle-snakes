@@ -7,13 +7,19 @@ import json
 
 # Constants
 app = Flask(__name__)
+NAME = "SSSSSYSC2006"
+COLOUR = "#55FF00"
 
 
 # Main API
 @app.route("/", methods=["GET"])
 def get():
     return {
-        "data": "Hi, this is a test."
+        "apiversion": "1",
+        "author": NAME,
+        "color": COLOUR,
+        "head": "default",  # TODO: Choose head
+        "tail": "default",  # TODO: Choose tail
     }
 
 
