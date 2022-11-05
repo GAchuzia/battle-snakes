@@ -1,2 +1,2 @@
 # battle_snakes
-CCSS Battle Snakes Competition
+CCSS Battle Snakes Competition (Nov 2022)
