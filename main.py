@@ -48,23 +48,19 @@ def move():
 
     # Check valid moves
     handle_backwards(request.json, move_safe)
+    handle_bounds(request.json, move_safe)
 
+    valid_moves = []
+    for direction, valid in move_safe.items():
+        if valid:
+            valid_moves.append(direction)
 
     # Take the safest move
-    if any(move_safe.values()):  # There are some moves
-
-        valid_moves = []
-        for direction, valid in move_safe.items():
-            if valid:
-                valid_moves.append(direction)
-
-        if len(valid_moves) == 1:
-            return move_response(valid_moves[0])
-        else:  # More than 1 move
-            pass
-
-    # No moves
-    else:
+    if len(valid_moves) == 1:  # One move
+        return move_response(valid_moves[0])
+    elif len(valid_moves) > 1:
+        return move_response(valid_moves[0], "Not implemented.")
+    else:  # NO moves
         print("Noooo we died!")
         return move_response("up", "I died with honour.")
 
