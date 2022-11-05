@@ -1,4 +1,4 @@
-# Battlesnakes competition November 5th 2022
+# BattleSnakes competition November 5th 2022
 __author__ = "Matteo Golin & Grant Achuzia"
 
 # Imports
@@ -33,4 +33,4 @@ def end():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=800)
